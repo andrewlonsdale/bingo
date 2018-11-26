@@ -3,6 +3,7 @@
 #' @param n_cards number of cards
 #' @param words text for the bingo squares
 #' @param n number of rows/columns for one card
+#' @param middle text for middle square
 #'
 #' @return a \code{bingo} object, which is really just a character matrix
 #' @export
