@@ -9,7 +9,7 @@
 #'
 #' @examples
 #' bingo()
-bingo <- function(n_cards = 1, words, n = 5) {
+bingo <- function(n_cards = 1, words, n = 5, middle = "FREE") {
   stopifnot(n %% 2 == 1)
 
   if (missing(words)) {
@@ -24,7 +24,7 @@ bingo <- function(n_cards = 1, words, n = 5) {
   cards <- replicate(n_cards, words[sample.int(m, size = n_sq)])
   up_to <- trunc(n_sq/2)
   cards <- rbind(utils::head(cards, up_to),
-                 rep("FREE", n_cards),
+                 rep(middle, n_cards),
                  utils::tail(cards, up_to))
   row.names(cards) <- NULL
   structure(cards, class = c("bingo", "matrix"))
